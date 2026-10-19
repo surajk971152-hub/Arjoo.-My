@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Arjoo Gautam's personal portfolio and student document portal.">
+<title>Arjoo Gautam | Personal Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home">AG<span>.</span> <small>Arjoo Gautam</small></a>
+  <button class="menu" id="menuBtn" aria-label="Toggle navigation">☰</button>
+  <nav id="nav"><a href="#home">Home</a><a href="#about">About</a><a href="#documents">My Documents</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a><button class="outline" id="loginOpen">Login</button></nav>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <p class="eyebrow">PERSONAL PORTFOLIO · STUDENT SPACE</p>
+    <h1>Hello, I'm <span id="heroName">Arjoo Gautam</span></h1>
+    <p class="role">Student <b>·</b> Learner <b>·</b> Dreamer</p>
+    <p class="lead" id="heroBio">A passionate learner, always eager to explore new opportunities, build my skills, and create a better future.</p>
+    <div class="actions"><a class="button primary" href="#documents">My documents</a><a class="button secondary" href="#contact">Contact me</a></div>
+    <p class="privacy-note"><span class="dot"></span> Private document area available after secure sign-in</p>
+  </div>
+  <div class="portrait-side">
+    <div class="portrait" id="portrait"><span>AG</span></div>
+    <label class="button secondary photo-upload">Upload your photo<input id="profilePhoto" type="file" accept="image/*"></label>
+    <small>Your photo stays in this browser preview until you configure profile storage.</small>
+  </div>
+</section>
+<section class="stats">
+  <article><span class="iconbox">▤</span><strong>My files</strong><small>Certificates & school documents</small></article>
+  <article><span class="iconbox green">▧</span><strong>Photo gallery</strong><small>Favorite moments</small></article>
+  <article><span class="iconbox violet">♡</span><strong>My story</strong><small>Goals and interests</small></article>
+  <article><span class="iconbox amber">✉</span><strong>Contact</strong><small>Get in touch</small></article>
+</section>
+<section class="columns">
+  <article class="panel" id="about"><p class="eyebrow">ABOUT ME</p><h2>Learning, growing, and moving forward.</h2><p class="muted">I'm Arjoo Gautam. This personal website brings together my introduction, education, achievements, documents, and photos in one place.</p><div class="detail"><b>Education</b><span>Add your school, college, or course</span></div><div class="detail"><b>Location</b><span>India</span></div><div class="detail"><b>Interests</b><span>Learning, creativity, reading, personal growth</span></div><button class="button secondary" id="editOpen">Edit profile details</button></article>
+  <article class="panel" id="documents"><div class="section-head"><div><p class="eyebrow">PRIVATE AREA</p><h2>My Documents</h2></div><span class="lock-label">🔒 Private</span></div><p class="muted">Sign in to upload and view files in your private document vault. Files are not made public.</p>
+    <div id="authPrompt" class="notice">Please sign in to access your documents.</div>
+    <div id="privateFiles" class="hidden"><label class="button primary upload">＋ Upload document<input id="documentUpload" type="file" multiple></label><div id="fileList" class="file-list"></div></div>
+    <p class="tiny muted">Only use this area for sensitive documents after Supabase setup and storage policies have been tested.</p>
+  </article>
+</section>
+<section class="panel gallery-section" id="gallery"><div class="section-head"><div><p class="eyebrow">MEMORIES & MOMENTS</p><h2>Photo Gallery</h2></div><label class="button secondary upload">＋ Add photos<input id="galleryUpload" type="file" accept="image/*" multiple></label></div><p class="muted">Add photos for a local preview. For permanent online gallery storage, connect a storage service.</p><div id="galleryGrid" class="gallery-grid"><div class="gallery-empty">Your gallery photos will appear here.</div></div></section>
+<section class="columns contact-columns">
+  <article class="panel" id="contact"><p class="eyebrow">SAY HELLO</p><h2>Get in touch</h2><p class="muted">Update the public email address before publishing.</p><p>✉ <b>Email:</b> <span id="publicEmail">your-email@example.com</span></p><p>⌖ <b>Location:</b> India</p><div class="socials"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="YouTube">▶</a></div></article>
+  <form class="panel form" id="contactForm"><h2>Prepare a message</h2><label>Your name<input required name="name" placeholder="Your name"></label><label>Your email<input required type="email" name="email" placeholder="you@example.com"></label><label>Message<textarea required name="message" rows="3" placeholder="Write your message..."></textarea></label><button class="button primary" type="submit">Open email app</button><p class="tiny muted">This opens your email app; messages are not stored on this site.</p></form>
+</section>
+</main>
+<footer>© <span id="year"></span> Arjoo Gautam · Personal portfolio & student space</footer>
+
+<div class="modal hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="modal-card"><button class="close" data-close="authModal" aria-label="Close">×</button><p class="eyebrow">SECURE ACCOUNT</p><h2 id="authTitle">Sign in</h2><p class="muted">Create an account or sign in to reach your private documents.</p><form id="authForm"><label>Email<input id="authEmail" type="email" required autocomplete="email" placeholder="you@example.com"></label><label>Password<input id="authPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="At least 8 characters"></label><button class="button primary full" id="authSubmit" type="submit">Sign in</button></form><div class="auth-actions"><button id="signupBtn" class="text-button">Create account</button><button id="resetBtn" class="text-button">Forgot password?</button></div><p id="authMessage" class="tiny muted" role="status">Set your Supabase project URL and anon key in config.js first.</p></div></div>
+<div class="modal hidden" id="editModal" role="dialog" aria-modal="true" aria-labelledby="editTitle"><div class="modal-card"><button class="close" data-close="editModal" aria-label="Close">×</button><p class="eyebrow">PERSONALIZE</p><h2 id="editTitle">Edit profile</h2><form id="profileForm"><label>Display name<input name="name" value="Arjoo Gautam" required></label><label>Short introduction<textarea name="bio" rows="3">A passionate learner, always eager to explore new opportunities, build my skills, and create a better future.</textarea></label><label>Public email<input name="email" type="email" placeholder="your-email@example.com"></label><button class="button primary full" type="submit">Update page preview</button></form></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script><script src="script.js"></script>
+</body></html>
