@@ -1,58 +1,160 @@
 <!doctype html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Arjoo Gautam's personal portfolio and student document portal.">
-<title>Arjoo Gautam | Personal Portfolio</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123a8c">
+  <title>Arjoo Gautam | Personal Website</title>
+  <style>
+    :root{--blue:#123a8c;--blue2:#2463eb;--ink:#15233b;--muted:#64748b;--bg:#f4f7ff;--line:#dbe5f5}
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:linear-gradient(160deg,#eaf1ff,#fff 48%,#edf5ff);min-height:100vh}
+    header{background:var(--blue);color:#fff;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .brand{font-weight:800;letter-spacing:.2px;font-size:1.1rem}.pill{border:1px solid #ffffff80;border-radius:999px;padding:7px 12px;font-size:.85rem}
+    main{max-width:960px;margin:28px auto;padding:0 16px 40px}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 16px 45px #163e8112}
+    .photo{width:100%;max-width:310px;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:20px;display:block;margin:auto;background:#e8eefb}
+    h1{font-size:clamp(2rem,6vw,3.3rem);line-height:1.08;margin:10px 0;color:var(--blue)}.eyebrow{color:var(--blue2);font-weight:750;text-transform:uppercase;letter-spacing:1.5px;font-size:.8rem}
+    p{line-height:1.65;color:var(--muted)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    button,.button{border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:700;cursor:pointer;background:var(--blue2);color:white;text-decoration:none;display:inline-flex;justify-content:center;align-items:center}
+    button.secondary,.button.secondary{background:#eaf0ff;color:var(--blue)}button:disabled{opacity:.55;cursor:not-allowed}
+    .panel{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 12px 30px #163e810b}
+    h2{margin:0 0 8px;color:var(--blue)}.small{font-size:.9rem}.notice{background:#fff7df;border:1px solid #f1d58b;padding:12px 14px;border-radius:12px;color:#714f00;font-size:.9rem}
+    label{display:block;font-weight:650;font-size:.92rem;margin:12px 0 6px}input{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;font:inherit;background:white}
+    .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.status{margin-top:12px;font-size:.92rem;overflow-wrap:anywhere}.hidden{display:none!important}
+    .filelist{padding-left:18px}.filelist li{margin:8px 0;overflow-wrap:anywhere}.footer{text-align:center;color:var(--muted);padding:24px 10px;font-size:.85rem}
+    @media(max-width:700px){.hero{grid-template-columns:1fr;padding:18px}.hero-copy{order:1}.hero-photo{order:0}.photo{max-width:220px}.formgrid{grid-template-columns:1fr}header{padding:16px}}
+  </style>
 </head>
 <body>
-<header class="topbar">
-  <a class="brand" href="#home">AG<span>.</span> <small>Arjoo Gautam</small></a>
-  <button class="menu" id="menuBtn" aria-label="Toggle navigation">☰</button>
-  <nav id="nav"><a href="#home">Home</a><a href="#about">About</a><a href="#documents">My Documents</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a><button class="outline" id="loginOpen">Login</button></nav>
-</header>
+<header><div class="brand">AG · Arjoo Gautam</div><span class="pill">Personal Website</span></header>
 <main>
-<section class="hero" id="home">
-  <div class="hero-copy">
-    <p class="eyebrow">PERSONAL PORTFOLIO · STUDENT SPACE</p>
-    <h1>Hello, I'm <span id="heroName">Arjoo Gautam</span></h1>
-    <p class="role">Student <b>·</b> Learner <b>·</b> Dreamer</p>
-    <p class="lead" id="heroBio">A passionate learner, always eager to explore new opportunities, build my skills, and create a better future.</p>
-    <div class="actions"><a class="button primary" href="#documents">My documents</a><a class="button secondary" href="#contact">Contact me</a></div>
-    <p class="privacy-note"><span class="dot"></span> Private document area available after secure sign-in</p>
-  </div>
-  <div class="portrait-side">
-    <div class="portrait" id="portrait"><span>AG</span></div>
-    <label class="button secondary photo-upload">Upload your photo<input id="profilePhoto" type="file" accept="image/*"></label>
-    <small>Your photo stays in this browser preview until you configure profile storage.</small>
-  </div>
-</section>
-<section class="stats">
-  <article><span class="iconbox">▤</span><strong>My files</strong><small>Certificates & school documents</small></article>
-  <article><span class="iconbox green">▧</span><strong>Photo gallery</strong><small>Favorite moments</small></article>
-  <article><span class="iconbox violet">♡</span><strong>My story</strong><small>Goals and interests</small></article>
-  <article><span class="iconbox amber">✉</span><strong>Contact</strong><small>Get in touch</small></article>
-</section>
-<section class="columns">
-  <article class="panel" id="about"><p class="eyebrow">ABOUT ME</p><h2>Learning, growing, and moving forward.</h2><p class="muted">I'm Arjoo Gautam. This personal website brings together my introduction, education, achievements, documents, and photos in one place.</p><div class="detail"><b>Education</b><span>Add your school, college, or course</span></div><div class="detail"><b>Location</b><span>India</span></div><div class="detail"><b>Interests</b><span>Learning, creativity, reading, personal growth</span></div><button class="button secondary" id="editOpen">Edit profile details</button></article>
-  <article class="panel" id="documents"><div class="section-head"><div><p class="eyebrow">PRIVATE AREA</p><h2>My Documents</h2></div><span class="lock-label">🔒 Private</span></div><p class="muted">Sign in to upload and view files in your private document vault. Files are not made public.</p>
-    <div id="authPrompt" class="notice">Please sign in to access your documents.</div>
-    <div id="privateFiles" class="hidden"><label class="button primary upload">＋ Upload document<input id="documentUpload" type="file" multiple></label><div id="fileList" class="file-list"></div></div>
-    <p class="tiny muted">Only use this area for sensitive documents after Supabase setup and storage policies have been tested.</p>
-  </article>
-</section>
-<section class="panel gallery-section" id="gallery"><div class="section-head"><div><p class="eyebrow">MEMORIES & MOMENTS</p><h2>Photo Gallery</h2></div><label class="button secondary upload">＋ Add photos<input id="galleryUpload" type="file" accept="image/*" multiple></label></div><p class="muted">Add photos for a local preview. For permanent online gallery storage, connect a storage service.</p><div id="galleryGrid" class="gallery-grid"><div class="gallery-empty">Your gallery photos will appear here.</div></div></section>
-<section class="columns contact-columns">
-  <article class="panel" id="contact"><p class="eyebrow">SAY HELLO</p><h2>Get in touch</h2><p class="muted">Update the public email address before publishing.</p><p>✉ <b>Email:</b> <span id="publicEmail">your-email@example.com</span></p><p>⌖ <b>Location:</b> India</p><div class="socials"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="YouTube">▶</a></div></article>
-  <form class="panel form" id="contactForm"><h2>Prepare a message</h2><label>Your name<input required name="name" placeholder="Your name"></label><label>Your email<input required type="email" name="email" placeholder="you@example.com"></label><label>Message<textarea required name="message" rows="3" placeholder="Write your message..."></textarea></label><button class="button primary" type="submit">Open email app</button><p class="tiny muted">This opens your email app; messages are not stored on this site.</p></form>
-</section>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">Welcome to my website</div>
+      <h1>Arjoo Gautam</h1>
+      <p>मेरी व्यक्तिगत वेबसाइट पर आपका स्वागत है। यहाँ मेरी प्रोफ़ाइल और, सुरक्षित लॉगिन के बाद, मेरी निजी फाइलों का क्षेत्र उपलब्ध होगा।</p>
+      <div class="actions"><a class="button" href="#login">लॉगिन करें</a><a class="button secondary" href="#about">मेरे बारे में</a></div>
+    </div>
+    <div class="hero-photo"><img class="photo" src="profile.jpg" alt="Arjoo Gautam की प्रोफ़ाइल फोटो"></div>
+  </section>
+  <section id="about" class="panel">
+    <h2>मेरे बारे में</h2>
+    <p>यह Arjoo Gautam की व्यक्तिगत वेबसाइट है। इस पेज को अपनी जानकारी, परिचय, शिक्षा और उपलब्धियों के अनुसार बदला जा सकता है।</p>
+  </section>
+  <section id="login" class="panel">
+    <h2>सुरक्षित लॉगिन</h2>
+    <p class="small">अपने Firebase ईमेल/पासवर्ड अकाउंट से लॉगिन करें। पहली बार उपयोग करने पर नीचे “नया अकाउंट बनाएँ” चुनें।</p>
+    <div class="notice">सेटअप ज़रूरी: नीचे दिए Firebase कॉन्फ़िगरेशन को अपने प्रोजेक्ट की जानकारी से भरने और Firebase Authentication/Storage चालू करने के बाद ही लॉगिन व अपलोड काम करेंगे।</div>
+    <form id="authForm">
+      <label for="email">ईमेल</label><input id="email" type="email" autocomplete="username" required placeholder="आपका ईमेल">
+      <label for="password">पासवर्ड</label><input id="password" type="password" autocomplete="current-password" required minlength="6" placeholder="पासवर्ड">
+      <div class="actions"><button type="submit">लॉगिन</button><button type="button" class="secondary" id="signupBtn">नया अकाउंट बनाएँ</button></div>
+      <div id="authStatus" class="status" role="status"></div>
+    </form>
+  </section>
+  <section id="privateArea" class="panel hidden">
+    <h2>आपकी निजी फाइलें</h2>
+    <p class="small">लॉगिन सफल होने पर ही यह सेक्शन दिखेगा। केवल अपने भरोसेमंद डिवाइस पर लॉगआउट करना न भूलें।</p>
+    <label for="fileInput">दस्तावेज़ चुनें</label><input id="fileInput" type="file">
+    <div class="actions"><button id="uploadBtn" type="button">फाइल अपलोड करें</button><button id="logoutBtn" type="button" class="secondary">लॉगआउट</button></div>
+    <div id="uploadStatus" class="status" role="status"></div>
+    <h3>अपलोड की गई फाइलें</h3><ul id="fileList" class="filelist"></ul>
+  </section>
+  <div class="footer">© <span id="year"></span> Arjoo Gautam · Personal Website</div>
 </main>
-<footer>© <span id="year"></span> Arjoo Gautam · Personal portfolio & student space</footer>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+  import { getStorage, ref, uploadBytes, listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
 
-<div class="modal hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle"><div class="modal-card"><button class="close" data-close="authModal" aria-label="Close">×</button><p class="eyebrow">SECURE ACCOUNT</p><h2 id="authTitle">Sign in</h2><p class="muted">Create an account or sign in to reach your private documents.</p><form id="authForm"><label>Email<input id="authEmail" type="email" required autocomplete="email" placeholder="you@example.com"></label><label>Password<input id="authPassword" type="password" required minlength="8" autocomplete="current-password" placeholder="At least 8 characters"></label><button class="button primary full" id="authSubmit" type="submit">Sign in</button></form><div class="auth-actions"><button id="signupBtn" class="text-button">Create account</button><button id="resetBtn" class="text-button">Forgot password?</button></div><p id="authMessage" class="tiny muted" role="status">Set your Supabase project URL and anon key in config.js first.</p></div></div>
-<div class="modal hidden" id="editModal" role="dialog" aria-modal="true" aria-labelledby="editTitle"><div class="modal-card"><button class="close" data-close="editModal" aria-label="Close">×</button><p class="eyebrow">PERSONALIZE</p><h2 id="editTitle">Edit profile</h2><form id="profileForm"><label>Display name<input name="name" value="Arjoo Gautam" required></label><label>Short introduction<textarea name="bio" rows="3">A passionate learner, always eager to explore new opportunities, build my skills, and create a better future.</textarea></label><label>Public email<input name="email" type="email" placeholder="your-email@example.com"></label><button class="button primary full" type="submit">Update page preview</button></form></div></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="config.js"></script><script src="script.js"></script>
-</body></html>
+  // Firebase Console > Project settings > Your apps से अपनी config यहाँ भरें।
+  const firebaseConfig = {
+    apiKey: "PASTE_YOUR_FIREBASE_API_KEY",
+    authDomain: "PASTE_YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "PASTE_YOUR_PROJECT_ID",
+    storageBucket: "PASTE_YOUR_STORAGE_BUCKET",
+    messagingSenderId: "PASTE_YOUR_MESSAGING_SENDER_ID",
+    appId: "PASTE_YOUR_FIREBASE_APP_ID"
+  };
+
+  const $ = (id) => document.getElementById(id);
+  $("year").textContent = new Date().getFullYear();
+  const configured = Object.values(firebaseConfig).every(v => v && !v.startsWith("PASTE_"));
+  let auth, storage;
+  if (configured) {
+    const app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    storage = getStorage(app);
+  } else {
+    $("authStatus").textContent = "Firebase अभी सेट नहीं है। README-HI.txt में दिए निर्देश पूरे करें।";
+    $("authForm").querySelectorAll("button").forEach(b => b.disabled = true);
+  }
+
+  $("authForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!configured) return;
+    $("authStatus").textContent = "लॉगिन हो रहा है…";
+    try {
+      await signInWithEmailAndPassword(auth, $("email").value.trim(), $("password").value);
+      $("authStatus").textContent = "लॉगिन सफल।";
+    } catch (err) { $("authStatus").textContent = "लॉगिन नहीं हुआ: " + friendlyError(err.code); }
+  });
+  $("signupBtn").addEventListener("click", async () => {
+    if (!configured) return;
+    $("authStatus").textContent = "अकाउंट बनाया जा रहा है…";
+    try {
+      await createUserWithEmailAndPassword(auth, $("email").value.trim(), $("password").value);
+      $("authStatus").textContent = "अकाउंट बन गया और लॉगिन हो गया।";
+    } catch (err) { $("authStatus").textContent = "अकाउंट नहीं बना: " + friendlyError(err.code); }
+  });
+  $("logoutBtn").addEventListener("click", async () => { if (auth) await signOut(auth); });
+  if (configured) {
+    onAuthStateChanged(auth, (user) => {
+      $("privateArea").classList.toggle("hidden", !user);
+      $("login").classList.toggle("hidden", !!user);
+      if (user) loadFiles(user); else $("fileList").innerHTML = "";
+    });
+  }
+  $("uploadBtn").addEventListener("click", async () => {
+    const user = auth?.currentUser, file = $("fileInput").files[0];
+    if (!user) { $("uploadStatus").textContent = "पहले लॉगिन करें।"; return; }
+    if (!file) { $("uploadStatus").textContent = "पहले एक फाइल चुनें।"; return; }
+    if (file.size > 10 * 1024 * 1024) { $("uploadStatus").textContent = "फाइल 10 MB से छोटी होनी चाहिए।"; return; }
+    $("uploadStatus").textContent = "अपलोड हो रहा है…";
+    try {
+      const safeName = file.name.replace(/[^\w.\- ()]/g, "_");
+      const path = `users/${user.uid}/${Date.now()}_${safeName}`;
+      await uploadBytes(ref(storage, path), file);
+      $("uploadStatus").textContent = "फाइल सफलतापूर्वक अपलोड हुई।";
+      $("fileInput").value = "";
+      await loadFiles(user);
+    } catch (err) { $("uploadStatus").textContent = "अपलोड नहीं हुआ: " + friendlyError(err.code); }
+  });
+  async function loadFiles(user) {
+    try {
+      const result = await listAll(ref(storage, `users/${user.uid}`));
+      $("fileList").innerHTML = "";
+      if (!result.items.length) { $("fileList").innerHTML = "<li>अभी कोई फाइल अपलोड नहीं है।</li>"; return; }
+      for (const item of result.items) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.textContent = item.name.replace(/^\d+_/, "");
+        a.href = await getDownloadURL(item);
+        a.target = "_blank"; a.rel = "noopener noreferrer";
+        li.appendChild(a); $("fileList").appendChild(li);
+      }
+    } catch (err) { $("uploadStatus").textContent = "फाइल सूची नहीं खुली: " + friendlyError(err.code); }
+  }
+  function friendlyError(code) {
+    return ({
+      "auth/invalid-credential":"ईमेल या पासवर्ड सही नहीं है।",
+      "auth/email-already-in-use":"इस ईमेल से अकाउंट पहले से है।",
+      "auth/weak-password":"कम-से-कम 6 अक्षरों का पासवर्ड रखें।",
+      "auth/invalid-email":"ईमेल पता जाँचें।",
+      "auth/operation-not-allowed":"Firebase में Email/Password लॉगिन चालू करें।",
+      "storage/unauthorized":"Storage Rules जाँचें।"
+    })[code] || code || "कृपया Firebase सेटिंग जाँचें।";
+  }
+</script>
+</body>
+</html>
